@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         button9 = (Button) findViewById(R.id.button9);
         buttonDot = (Button) findViewById(R.id.buttondot);
         buttonPlus = (Button) findViewById(R.id.buttonplus);
-        buttonMinus = (Button) findViewById(R.id.buttonsub);
+        buttonMinus = (Button) findViewById(R.id.buttonminus);
         buttonMultiple = (Button) findViewById(R.id.buttonmul);
         buttonDivide = (Button) findViewById(R.id.buttondiv);
         buttonC = (Button) findViewById(R.id.buttonC);
@@ -169,6 +169,7 @@ public class MainActivity extends AppCompatActivity {
                     result.setText(value1/value2+"");
                     division=false;
                 }
+                
             }
         });
 
