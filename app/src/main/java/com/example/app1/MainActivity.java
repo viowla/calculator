@@ -149,6 +149,28 @@ public class MainActivity extends AppCompatActivity {
                 result.setText("");
             }
         });
+        buttonEqual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                value2=Float.parseFloat(result.getText()+"");
+                if (addition==true){
+                    result.setText(value1+value2+"");
+                    addition=false;
+                }
+                if (subtract==true){
+                    result.setText(value1-value2+"");
+                    subtract=false;
+                }
+                if (multiplication==true){
+                    result.setText(value1*value2+"");
+                    multiplication=false;
+                }
+                if (division==true){
+                    result.setText(value1/value2+"");
+                    division=false;
+                }
+            }
+        });
 
 
     }
