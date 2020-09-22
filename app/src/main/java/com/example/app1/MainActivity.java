@@ -10,12 +10,13 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
 
     Button button0, button1,button2,button3,button4,button5,button6,button7,button8,button9,
-    buttonPlus,buttonMinus, buttonDivide,buttonMultiple,buttonEqual,buttonDot,buttonC,buttonPlusMinus;
+    buttonPlus,buttonMinus, buttonDivide,buttonMultiple,buttonEqual,buttonDot,buttonC,buttonPlusMinus,
+    buttonPercent;
     EditText result;
 
     float value1,value2;
 
-    boolean addition, subtract, multiplication, division, plusMinus;
+    boolean addition, subtract, multiplication, division, plusMinus, percent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         buttonC = (Button) findViewById(R.id.buttonC);
         buttonEqual = (Button) findViewById(R.id.buttoneql);
         buttonPlusMinus = (Button) findViewById(R.id.buttonplusminus);
+        buttonPercent = (Button) findViewById(R.id.buttonper);
         result = (EditText) findViewById(R.id.edt1);
 
         button0.setOnClickListener(new View.OnClickListener() {
@@ -175,6 +177,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        buttonPercent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                percent=true;
+            }
+        });
+
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -197,6 +206,10 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (plusMinus==true){
                     result.setText(0-value1+"");
+                }
+                if (percent==true){
+                    result.setText(value1/100+"");
+                    percent=false;
                 }
                 
             }
