@@ -10,12 +10,12 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
 
     Button button0, button1,button2,button3,button4,button5,button6,button7,button8,button9,
-    buttonPlus,buttonMinus, buttonDivide,buttonMultiple,buttonEqual,buttonDot,buttonC;
+    buttonPlus,buttonMinus, buttonDivide,buttonMultiple,buttonEqual,buttonDot,buttonC,buttonPlusMinus;
     EditText result;
 
     float value1,value2;
 
-    boolean addition, subtract, multiplication, division;
+    boolean addition, subtract, multiplication, division, plusMinus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         buttonDivide = (Button) findViewById(R.id.buttondiv);
         buttonC = (Button) findViewById(R.id.buttonC);
         buttonEqual = (Button) findViewById(R.id.buttoneql);
+        buttonPlusMinus = (Button) findViewById(R.id.buttonplusminus);
         result = (EditText) findViewById(R.id.edt1);
 
         button0.setOnClickListener(new View.OnClickListener() {
@@ -47,60 +48,71 @@ public class MainActivity extends AppCompatActivity {
                 result.setText(result.getText() + "0");
             }
         });
+
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 result.setText(result.getText() + "1");
             }
         });
+
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 result.setText(result.getText() + "2");
             }
         });
+
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 result.setText(result.getText() + "3");
             }
         });
+
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 result.setText(result.getText() + "4");
             }
         });
+
+
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 result.setText(result.getText() + "5");
             }
         });
+
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 result.setText(result.getText() + "6");
             }
         });
+
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 result.setText(result.getText() + "7");
             }
         });
+
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 result.setText(result.getText() + "8");
             }
         });
+
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 result.setText(result.getText() + "9");
             }
         });
+
         buttonPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -113,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
         buttonMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -121,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
                     result.setText(null);
                 }
         });
+
         buttonMultiple.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -129,6 +143,8 @@ public class MainActivity extends AppCompatActivity {
                 result.setText(null);
             }
         });
+
+
         buttonDivide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,18 +153,28 @@ public class MainActivity extends AppCompatActivity {
                 result.setText(null);
             }
         });
+
+        buttonPlusMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                plusMinus = true;
+            }
+        });
+
         buttonDot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 result.setText(result.getText()+".");
             }
         });
+
         buttonC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 result.setText("");
             }
         });
+
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -168,6 +194,9 @@ public class MainActivity extends AppCompatActivity {
                 if (division==true){
                     result.setText(value1/value2+"");
                     division=false;
+                }
+                if (plusMinus==true){
+                    result.setText(0-value1+"");
                 }
                 
             }
