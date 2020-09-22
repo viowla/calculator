@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button0=(Button) findViewById(R.id.button0);
+        button0 = (Button) findViewById(R.id.button0);
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
         button3 = (Button) findViewById(R.id.button3);
@@ -45,6 +45,108 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 result.setText(result.getText() + "0");
+            }
+        });
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                result.setText(result.getText() + "1");
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result.setText(result.getText() + "2");
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result.setText(result.getText() + "3");
+            }
+        });
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result.setText(result.getText() + "4");
+            }
+        });
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result.setText(result.getText() + "5");
+            }
+        });
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result.setText(result.getText() + "6");
+            }
+        });
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result.setText(result.getText() + "7");
+            }
+        });
+        button8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result.setText(result.getText() + "8");
+            }
+        });
+        button9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result.setText(result.getText() + "9");
+            }
+        });
+        buttonPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (result == null) {
+                    result.setText("");
+                } else {
+                    value1 = Float.parseFloat(result.getText() + "");
+                    addition = true;
+                    result.setText(null);
+                }
+            }
+        });
+        buttonMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    value1 = Float.parseFloat(result.getText() + "");
+                    subtract = true;
+                    result.setText(null);
+                }
+        });
+        buttonMultiple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                value1 = Float.parseFloat(result.getText() + "");
+                multiplication = true;
+                result.setText(null);
+            }
+        });
+        buttonDivide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                value1 = Float.parseFloat(result.getText() + "");
+                division = true;
+                result.setText(null);
+            }
+        });
+        buttonDot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result.setText(result.getText()+".");
+            }
+        });
+        buttonC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result.setText("");
             }
         });
 
